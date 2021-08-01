@@ -1,0 +1,119 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+h1
+{
+    color: whitesmoke;
+    font-size: 6rem;
+    font-weight: lighter;
+}
+.title-image
+{
+    border-radius: 100%;
+    width: 15%;
+    float:auto;
+}
+.first-block
+{
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+}
+.nav-link
+{
+    color: whitesmoke;
+}
+.social-icon
+{
+    color: black;
+    margin: 20px 10px;
+}
+.second-block
+{
+    margin: 50px auto 50px auto;
+    text-align:left;
+}
+.second-header
+{
+    padding: 2%;
+    text-align: center;
+}
+#title
+{
+    padding-bottom: 3%;
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+}
+/* THIRD BLOCK */
+.skills{
+    padding-top: 3%;
+}
+.skill-row
+{
+    width: 50%;
+    margin: 100px auto 100px auto;
+    text-align: left;
+    line-height: 2;
+}
+h2
+{
+    color:#3931af;
+    font-size: 250%;
+    font-weight: normal;
+}
+h3
+{
+    font-size: 150%;
+     color:#3931af;  
+}
+.my_skill_image
+{
+    border-radius: 100%;
+    width: 25%;
+    float: left;
+    margin-right: 30px;
+}
+.my_skill_image2
+{
+    border-radius: 60%;
+    width: 25%;
+    float: right;
+    margin-left: 30px;
+}
+ /* FOURTH BLOCK */
+ .FOURTH{
+    text-align: center;
+    padding: 8%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.1;
+    background-color:#2c2a88;
+    color: whitesmoke;
+}
+#footer
+{
+    padding: 3% 3%;
+    background-color:#2c2a88;
+    color: whitesmoke;
+    text-align: center;
+}
+@media (min-width: 200px) and (max-width:1000px){
+    h1{
+        font-size: 2rem;
+      }
+    .fac3{
+        font-size: 1.5rem;
+    }
+    .fac{
+        font-size: 0.7rem;
+        font-weight: bold;
+    }
+    .fac1{
+        font-size: 0.7rem;
+    }
+    .fac2{
+        font-size: 0.7rem;
+        font-weight: bold;
+    }
+    .FOURTH{
+        font-size: 0.6rem;   
+    }
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archana Classes</title>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="student.css">
+    <script defer src=" https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section id="title">
+        <a href="index1.html">  <nav class="TOP"><b>Home</b></nav><br><br>  </a>
+            <div class="second-block">
+                
+                <h1 class="second-header"><strong><img class="title-image" src="logo1.png" alt="Flower"><strong>Archana Classes</strong></h1>
+                <h5 style="color: blanchedalmond;"> <b>Welcome <%= studentdata.yourName %></b> </h5>
+            </div>
+    </section>   
+    <div class="Third">
+        <table style="width:100%">
+            <h3><b>Student Details</b></h3><br>
+        <tr>
+          
+          <th><b>Name<br><br> </b></th>
+          <th><b>Details<br><br></b></th>
+        </tr>
+        <tr>
+          <td><b>Father's Name :- </b></td>
+          <td><b> <%= studentdata.yourFatherName %></b></td>
+        </tr>
+        <tr>
+          <td> <b>Mother's Name :-</b></td>
+          <td><b> <%= studentdata.yourMotherName %></b></td>
+        </tr>
+        <tr>
+            <td> <b>Roll No:-</b></td>
+            <td><b> <%= studentdata.rollNumber %></b></td>
+        </tr>
+             <td> <b>E-mail I'D:-</b></td>
+             <td><b> <%= studentdata.yourEmail %></b></td>
+      </table>
+    </div>     
+            <div class="fourth">
+                <table style="width:100%">
+                <tr>
+                  
+                  <th><b>Subject<br><br></b></th>
+                  <th><b>Total no of Class<br><br></b></th>
+                  <th><b>Total no of Present<br><br></b></th>
+                  <th><b>Total Fee left<br><br></b></th>
+                </tr>
+                <tr>
+                  <td><b> Physics </b></td>
+                  <td><b><% if(studentdata.totalDayPhysics!=0) {%>
+                   <%= studentdata.totalDayPhysics %>
+                  <%}%></b></td>
+                  <td><b><% if(studentdata.physicsAtt!=0) {%>
+                    <%= studentdata.physicsAtt %>
+                   <%}%></b></td>
+                  <td><b><% if(studentdata.physicsFee!=0){ %>
+                    <%= studentdata.physicsFee %>
+                   <%}%>
+                  </b></td>
+                </tr>
+                <tr>
+                    <td> <b>Chemistry</b></td>
+                    <td><b><% if(studentdata.totalDayChemistry != 0) { %>
+                    <%= studentdata.totalDayChemistry %>
+                    <%}%></b></td>
+                    <td><b><% if(studentdata.chemistryAtt != 0) { %>
+                    <%= studentdata.chemistryAtt%>
+                    <%}%></b></td>
+                    <td><b><% if(studentdata.chemistryFee!=0){ %>
+                    <%= studentdata.chemistryFee %>
+                     <%}%></b></td>
+                </tr>
+                <tr>
+                    <td> <b>Mathematics</b></td>
+                    <td><b> <%if(studentdata.totalDayMaths!=0){%>
+                        <%= studentdata.totalDayMaths %>
+                    <%}%></b></td>
+                    <td><b> <%if(studentdata.mathAtt!=0){%>
+                        <%= studentdata.mathAtt %>
+                    <%}%></b></td>
+                    <td><b><% if(studentdata.mathFee!=0){ %>
+                     <%= studentdata.mathFee %>
+                    <%}%></b></td>
+                </tr>
+                <tr>
+                    <td> <b>Biology</b></td>
+                    <td><b><%if(studentdata.totalDayBiology!=0){%>
+                       <%= studentdata.totalDayBiology %>
+                    <%}%></b></td>
+                    <td><b><%if(studentdata.biologyAtt!=0){%>
+                         <%= studentdata.biologyAtt %>
+                    <%}%></b></td>
+                    <td><b><% if(studentdata.biologyFee!=0){ %>
+                        <%= studentdata.biologyFee %> 
+                    <%}%></b></td>
+                </tr>
+              </table>
+            </div>
+            <div class="fifth">
+                <table style="width:84%">
+                <tr>
+                  
+                  <th><b>Notes link:-</b></th>
+                  <th><b> <%= studentdata.notes %></b></th>
+                </tr>
+                <tr>
+                  <td><b>Test Question link :- </b></td>
+                  <td><b> <%= studentdata.testQuestion %></b></td>
+                
+              </table>
+            <div>
+              <div class="bottom-container" id="footer">
+                <p class="xy">© by ArchanaClasses.</p>
+            </div>
+</body>
+</html>   
