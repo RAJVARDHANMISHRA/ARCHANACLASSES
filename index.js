@@ -238,9 +238,9 @@ const Admission = conn3.model("Admission", admissionSchema);
 // });
 // admission.save();
 app.post("/admission", function (req, res) {
-    if(window.history.replaceState){
-        window.history.replaceState(null,null,window.location.href);
-    }
+    // if(window.history.replaceState){
+    //     window.history.replaceState(null,null,window.location.href);
+    // }
     var your_name = req.body.name;
     var father_name = req.body.fname;
     var mother_name = req.body.mname;
@@ -307,8 +307,7 @@ app.post("/admission", function (req, res) {
         });
         
     }
-    
-    // res.sendFile(__dirname + "/index1.html");
+    history.replaceState( {} , 'foo', '/foo' );
 });
 // all about admission database END
 //******************************************************************************************** 
