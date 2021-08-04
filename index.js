@@ -307,7 +307,9 @@ app.post("/admission", function (req, res) {
         });
         
     }
-    history.replaceState( {} , 'foo', '/foo' );
+    if(window.history.replaceState){
+        window.history.replaceState(null,null,window.location.href);
+    }
 });
 // all about admission database END
 //******************************************************************************************** 
