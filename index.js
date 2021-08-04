@@ -35,9 +35,6 @@ const Admin = conn1.model("Admin", adminSchema);
 // });
 // admin.save();
 app.post("/adminlogin", function (req, res) {
-    if(window.history.replaceState){
-        window.history.replaceState(null,null,window.location.href);
-    }
     var admin_user = req.body.username;
     var pass_word = req.body.password;
     Admin.find(function (err, admins) {
@@ -85,9 +82,6 @@ const inquirySchema = new mongoose.Schema({
 const Inquiry = conn2.model("Inquiry", inquirySchema);
 
 app.post("/", function (req, res) {
-    if(window.history.replaceState){
-        window.history.replaceState(null,null,window.location.href);
-    }
     var firstName = req.body.firstname;
     var secondName = req.body.lastname;
     var phoneNumber = req.body.phonenumber;
@@ -238,9 +232,6 @@ const Admission = conn3.model("Admission", admissionSchema);
 // });
 // admission.save();
 app.post("/admission", function (req, res) {
-    // if(window.history.replaceState){
-    //     window.history.replaceState(null,null,window.location.href);
-    // }
     var your_name = req.body.name;
     var father_name = req.body.fname;
     var mother_name = req.body.mname;
@@ -307,18 +298,12 @@ app.post("/admission", function (req, res) {
         });
         
     }
-    if(window.history.replaceState){
-        window.history.replaceState(null,null,window.location.href);
-    }
 });
 // all about admission database END
 //******************************************************************************************** 
 
 
 app.post("/login", function (req, res) {
-    if(window.history.replaceState){
-        window.history.replaceState(null,null,window.location.href);
-    }
     var roll_number = req.body.rollnumber;
     var pass_word = req.body.password;
     Admission.find(function (err, admissions) {
@@ -346,9 +331,6 @@ app.post("/login", function (req, res) {
 
 
 app.post("/adminchange", function (req, res) {
-    if(window.history.replaceState){
-        window.history.replaceState(null,null,window.location.href);
-    }
     var roll_number = req.body.roll;
     var p_fp = req.body.pf;
     var c_fp = req.body.cf;
@@ -442,9 +424,6 @@ app.post("/adminchange", function (req, res) {
 });
 
 app.post("/adminchangeatt", function (req, res) {
-    if(window.history.replaceState){
-        window.history.replaceState(null,null,window.location.href);
-    }
     var roll_number = req.body.roll;
     var ptd = req.body.ptd;
     var ctd = req.body.ctd;
@@ -533,9 +512,6 @@ app.post("/adminchangeatt", function (req, res) {
 });
 
 app.post("/adminchangetestquestion", function (req, res) {
-    if(window.history.replaceState){
-        window.history.replaceState(null,null,window.location.href);
-    }
         Admission.find(function (err, admissions) {
         if (err) {
             console.log(err);
@@ -558,9 +534,6 @@ app.post("/adminchangetestquestion", function (req, res) {
 });
 
 app.post("/adminchangenotes", function (req, res) {
-    if(window.history.replaceState){
-        window.history.replaceState(null,null,window.location.href);
-    }
     Admission.find(function (err, admissions) {
         if (err) {
             console.log(err);
