@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 const mongoose = require("mongoose");
 const app = express();
 
@@ -288,7 +288,7 @@ app.post("/admission", function (req, res) {
                     }
                 });
                 if(f==1){
-                    res.send('<script>alert("Successfully created your account now go to home page and login")</script>');
+                    res.sendFile(__dirname + "/public/index2.html");
                 }
                 else{
                     
