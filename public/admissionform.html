@@ -101,12 +101,13 @@
 						</div>
 						
 
-						<script>
+						<!-- <script>
+
 							function submitForm() {
 							document.contact-form.submit();
 							document.contact-form.reset();
 							}
-						</script>
+						</script> -->
 					</form>
 				</div>
 			</div>
@@ -114,6 +115,11 @@
 		<div class="bottom-container" id="footer">
 			<p class="xy">© by ArchanaClasses.</p>
 		</div>
+		<script>
+			if(window.history.replaceState){
+				window.history.replaceState(null,null,window.location.href);
+			}
+		</script>
 		 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
