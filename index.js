@@ -293,6 +293,7 @@ app.post("/admission", function (req, res) {
                 else{
                     
                     res.send('<script>alert("Sorry,some thing went worng")</script>');
+                    window.location.href;
                 }
             }
         });
