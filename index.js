@@ -252,8 +252,9 @@ app.post("/admission", function (req, res) {
                 admissions.forEach(function (admission) {
                     if (roll_number == admission.rollNumber && admission.yourName != "null") {
                         res.send('<script>alert("SORRY YOUR ROLL NUMBER ALRAEDY EXIST")</script>');
+                        window.location.href;
                     }
-                    if (roll_number == admission.rollNumber && admission.yourName == "null") {
+                    else if (roll_number == admission.rollNumber && admission.yourName == "null") {
                         f=1;
                         Admission.updateOne({ rollNumber: roll_number }, { yourName: your_name }, function (err) {
                             if (err) {
