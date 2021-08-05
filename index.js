@@ -265,7 +265,7 @@ app.post("/admission", async (req, res, next) => {
                     admissions.forEach(function (admission) {
                         if (roll_number == admission.rollNumber && admission.yourName != "null") {
                             t = 1;
-                            res.send('<script>alert("SORRY YOUR ROLL NUMBER ALRAEDY EXIST")</script>');
+                            res.send('<script>alert("YOUR ROLL NUMBER ALREADY EXIST")</script>');
                         }
                         else if (roll_number == admission.rollNumber && admission.yourName == "null") {
                             t = 1;
@@ -312,8 +312,6 @@ app.post("/admission", async (req, res, next) => {
                 }
             });
         }
-
-        // res.sendFile(__dirname + "/index1.html");
     } catch (err) {
         next(err);
     }
@@ -467,8 +465,10 @@ app.post("/adminchangeatt", async (req, res, next) => {
                 console.log(err);
             }
             else {
+                var flag = 0;
                 admissions.forEach(function (admission) {
                     if (roll_number == admission.rollNumber) {
+                        flag=1;
                         if (ptd != 0) {
                             var p_td = Number(admission.totalDayPhysics) + Number(ptd);
                             Admission.updateOne({ rollNumber: roll_number }, { totalDayPhysics: p_td }, function (err) {
@@ -536,6 +536,9 @@ app.post("/adminchangeatt", async (req, res, next) => {
                         res.send('<script>alert("Success updated the Attendence")</script>')
                     }
                 });
+                if(flag==0){
+                    res.send('<script>alert("Some thing went wrong")</script>')
+                }
             }
         });
     }catch(err){
@@ -550,8 +553,10 @@ app.post("/adminchangetestquestion", async (req, res, next) => {
                 console.log(err);
             }
             else {
+                var flag = 0;
                 admissions.forEach(function (admission) {
                     if (admission.yourName != "null") {
+                        flag=1;
                         var val = admission.rollNumber;
                         var v = req.body.tq;
                         Admission.updateOne({ rollNumber: val }, { testQuestion: v }, function (err) {
@@ -559,11 +564,16 @@ app.post("/adminchangetestquestion", async (req, res, next) => {
                                 console.log(err);
                             }
                         });
+                        res.send('<script>alert("Success fully updated question")</script>');
                     }
                 });
+                if(flag==0)
+                {
+                    res.send('<script>alert("some thing went wrong")</script>');
+                }
             }
         });
-        res.send('<script>alert("Success fully updated question")</script>');
+        
     }catch(err){
         next(err);
     }
@@ -576,6 +586,7 @@ app.post("/adminchangenotes", async (req, res, next) => {
                 console.log(err);
             }
             else {
+                var flag = 0;
                 admissions.forEach(function (admission) {
                     if (admission.yourName != "null") {
                         var val = admission.rollNumber;
@@ -585,11 +596,14 @@ app.post("/adminchangenotes", async (req, res, next) => {
                                 console.log(err);
                             }
                         });
+                        res.send('<script>alert("Success fully updated notes")</script>')
                     }
                 });
+                if(flag==0){
+                    res.send('<script>alert("Something went wrong")</script>')
+                }
             }
-        });
-        res.send('<script>alert("Success fully updated notes")</script>')
+        }); 
     }catch(err){
         next(err);
     }
