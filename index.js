@@ -553,7 +553,6 @@ app.post("/adminchangetestquestion", async (req, res, next) => {
                 console.log(err);
             }
             else {
-                var flag = 0;
                 admissions.forEach(function (admission) {
                     if (admission.yourName != "null") {
                         flag=1;
@@ -564,16 +563,11 @@ app.post("/adminchangetestquestion", async (req, res, next) => {
                                 console.log(err);
                             }
                         });
-                        res.send('<script>alert("Success fully updated question")</script>');
                     }
                 });
-                if(flag==0)
-                {
-                    res.send('<script>alert("some thing went wrong")</script>');
-                }
             }
         });
-        
+        res.send('<script>alert("Success fully updated question")</script>');
     }catch(err){
         next(err);
     }
@@ -586,7 +580,6 @@ app.post("/adminchangenotes", async (req, res, next) => {
                 console.log(err);
             }
             else {
-                var flag = 0;
                 admissions.forEach(function (admission) {
                     if (admission.yourName != "null") {
                         var val = admission.rollNumber;
@@ -596,14 +589,11 @@ app.post("/adminchangenotes", async (req, res, next) => {
                                 console.log(err);
                             }
                         });
-                        res.send('<script>alert("Success fully updated notes")</script>')
                     }
                 });
-                if(flag==0){
-                    res.send('<script>alert("Something went wrong")</script>')
-                }
             }
         }); 
+        res.send('<script>alert("Success fully updated notes")</script>')
     }catch(err){
         next(err);
     }
